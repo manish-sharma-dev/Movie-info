@@ -1,0 +1,129 @@
+.header{
+    margin: 0;
+    margin-top: 30px;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    position: relative;
+    height: 350px;
+    overflow:hidden;
+    position: relative;
+}
+
+.background_img{
+    width: 1278px;
+    height: 870px;
+    opacity: 0.2;
+    filter: brightness(2);
+    filter: saturate(2);
+    /* z-index: -100; */
+}
+
+.image_and_text{
+    margin: 5px;
+    padding: 0 20px;
+    display: flex;
+    overflow: hidden;
+    gap: 30px;
+    /* z-index: 100px; */
+    /* color: black; */
+    position: absolute;
+    top: 0;
+    
+}
+
+.frontend_img{
+    /* width: 380px; */
+    width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.front_img{
+    padding-top: 5px;
+    width: 400px;
+    height: 330px;
+    border-radius: 5px;
+}
+
+/* text and button component start heres */
+
+.text_and_button_component{
+    line-height: 25px;
+    padding-left: 20px;
+    color:white;
+    opacity: 0.8;
+}
+
+.rating{
+    font-size: 12px;
+    color: crimson;
+    margin-top: 10px;
+}
+
+.release_date{
+    font-size: 15px;
+    margin-top: 20px;
+    /* color: orange; */
+}
+
+.movie_description{
+    font-size: 13px;
+    opacity: 0.5;
+    margin-top:30px;
+}
+.watch_now{
+    padding: 5px 10px;
+    background-color: crimson;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+    font-size: 12px;
+    margin: 10px 20px 0 0;
+    transition:  all 200ms ease;
+}
+
+.watch_now:hover{
+    background-color:white;
+    color: black;
+    margin-top: 50px;
+    padding: 6px 11px;
+}
+
+.add_to_list{
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    border-style: none;
+    margin-top: 50px;
+}
+
+.add_to_list:hover{
+    background-color:dimgray;
+    color: white;
+    padding: 6px 11px;
+}
+
+/* .swipe{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.swipe_left{
+    padding: 3px 5px;
+    background-color:;
+
+}
+
+.swipe_left:hover{
+    size: 20px;
+}
+
+.swipe_right{
+        padding: 3px 5px;
+} */
+
+

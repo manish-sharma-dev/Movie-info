@@ -1,0 +1,85 @@
+.main{
+    margin: 30px 30px  0;
+    padding: 5px 10px;
+}
+
+.category_name{
+    background-color:#2e2e2e ;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 10px;
+    margin: 0 370px;
+    border-radius: 20px ;
+}
+
+.category_list{
+    font-size: 13px;
+    color: #ffffff;
+    transition: all 200ms ease;
+    cursor: pointer;
+}
+
+.category_list:hover{
+    color:crimson;
+}
+
+/* card design here  */
+
+.movie_card_component{
+    /* margin-top: 30px; */
+    /* padding: 5px; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8vw;
+    margin: 5vw 8vw 0;
+}
+
+.card{
+    background-color: bisque;
+    width: 20vw;
+    color: white;
+    border-radius: 3px;
+}
+
+.card_text{
+    background-color: #1E1E1E;
+    padding: 7px;
+    padding-left: 10px;
+    border-radius: 3px;
+}
+
+.card_movie_title{
+    font-size: 1.4rem;
+}
+
+.card_movie_description{
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.rating_watch_movie{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.card_movie_rating{
+    color: crimson;
+    font-size: 0.9rem;
+    padding-left: 100px;
+}
+
+.watch_movie{
+    padding: 3px 10px;
+    border-radius: 5px;
+    background-color: dimgray;
+    color: white;
+    font-size: 13px;
+}
+
+.watch_movie:hover{
+    background-color: crimson;
+    /* border-style: none; */
+}
