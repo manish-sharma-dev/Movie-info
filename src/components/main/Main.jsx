@@ -59,21 +59,22 @@ export default function Main() {
   
    
         <div className='movie_card_component'>
-          
-            <div className='card' key={movies.id}>
+          {movies.map((movie, id) => {
+
+            <div className='card' key={id}>
               <img src='#' alt='movie_image' />
               <div className='card_text'>
-                <span className='card_movie_title'>{movies.originalTitle}</span>
-                <span className='card_movie_description'>Overview</span>
+                <span className='card_movie_title'>{movie.originalTitle}</span>
+                <span className='card_movie_description'>{movie.overview}</span>
                 <div className='rating_watch_movie'>
                   <button className='watch_movie'>Watch</button>
                   <span className='card_movie_rating'>{movies.rating}</span>
                 </div>
               </div>
             </div>
-          
+
+          })}
         </div>
-      
     </div>
   );  
 }
