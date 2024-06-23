@@ -22,6 +22,11 @@
     margin-top: -5px;
 }
 
+.options{
+    color:crimson ;
+    font-weight: 700;
+}
+
 .search{
     display: flex;
     justify-content: space-between;
@@ -29,14 +34,14 @@
     background-color:#2e2e2e;
     padding: 5px 13px;
     border-radius: 10px;
-    width: 25vw;
+    width: 18vw;
 }
 
 .search_box{
     border: 1px solid #2e2e2e;
     background-color:#2e2e2e ;
     color:white;
-    width: 18vw;
+    width: 15vw;
 }
 
 .search_box:focus{
@@ -45,6 +50,7 @@
 
 .search_box::placeholder{
     color: white;
+    opacity: 0.6;
 }
 
 .search_btn{

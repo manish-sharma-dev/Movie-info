@@ -1,35 +1,106 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../header/Header.css'
-import img1 from '../../assest/img-1.jpg'
-import { ArrowRight, ArrowLeft } from 'react-feather'
+// import img1 from '../../assest/img-1.jpg'
+// import { ArrowRight, ArrowLeft } from 'react-feather'
 
 export default function Header() {
+
+  const [poster ,setPoster] = useState([])
+  // const [poster ,setPoster] = useState({})
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(()=> {
+    const fetchmoviePoster = async () =>{
+      const options = {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYzAwOGExZWY0N2Y4ZjI3MDdhN2U2NjAwZmNiY2Q3MSIsIm5iZiI6MTcxOTA1MzEyNi41MzU1ODIsInN1YiI6IjY2NzE0OTM5Nzc4M2ExNmQ5MmYyZjcyYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7pzLOsCUYdY1hJ5z3q1aJ8eK-myVkD65A_RCbbPwAgg'
+        }
+      };
+
+      const url = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
+
+      try {
+        const response = await fetch(url, options);
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const posterData = await response.json();
+        console.log('poster data is here')
+        // console.log(posterData.results)
+        // setPoster(posterData.results[2])
+        setPoster(posterData.results)
+
+      }
+      catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchmoviePoster()
+  }, [])
+
+  useEffect(()=>{
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % poster.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  },[poster.length])
+
+
   return (
+    // <div className='header'>
+    //   <div className='poster-carousel'>
+
+    //        <div className='poster-item'>
+    //            <img src={`https://image.tmdb.org/t/p/w500${poster.backdrop_path}`} alt='img1' className='background_img' />
+    //              <div className='image_and_text'>
+    //                 <div className='frontend_img'>
+    //                   <img src={`https://image.tmdb.org/t/p/w200${poster.poster_path}`} alt='img2' className='front_img' />
+    //                 </div>
+
+    //                 <div className='text_and_button_component'>
+    //                     <h1 className='movie-title'>{poster.original_title}</h1>
+    //                     <p className='movie-description'>{poster.overview}</p>
+    //                     <p className='rating'>imdb rating {poster.vote_average}</p>
+    //                     <p className='release_date'>{poster.release_date}</p>
+    //                     <button className='watch_now'>Know more</button>
+    //                     <button className='add_to_list'>+ Add To List</button>
+    //                 </div>
+    //              </div>
+    //        </div>
+
+    //     </div>
+    // </div>
+
+
     <div className='header'>
-      <img src={img1} alt='img1' className='background_img'/>
+      <div className='poster-carousel'>
 
-      
-        <div className='image_and_text'>
-          <div className='frontend_img'>
-            <img src={img1} alt='img2' className='front_img'/>
-          </div>
+        {poster.map((content,index) => (
+            <div className='poster-item' key={index}>
+            <img src={`https://image.tmdb.org/t/p/w500${content.backdrop_path}`} alt='img1' className='background_img' />
+              <div className='image_and_text'>
+                <div className='frontend_img'>
+                  <img src={`https://image.tmdb.org/t/p/w200${content.poster_path}`} alt='img2' className='front_img' />
+                </div>
 
-          <div className='text_and_button_component'>
-              <h1 className='movie-title'>Movie-title</h1>
-              <p className='movie-description'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat ea, placeat aperiam sed optio qui cum, tempora perspiciatis ratione dolore ipsum possimus provident. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, dolores illo, nesciunt iusto quis excepturi laudantium facilis ratione harum molestiae, corporis exercitationem at dignissimos! Eaque facere pariatur dolorem dolore amet?</p>
-              <p className='rating'>imdb rating : 8+</p>
-              <p className='release_date'>March-22, 2010, Thursday </p>
-              <button className='watch_now'>Watch Now</button>
-              <button className='add_to_list'>+ Add To List</button>
-              
-              {/* <div className="swipe">
-                  <ArrowLeft className='swipe_left' size={15} />
-                  <ArrowRight className='swipe_right' size={15}/>
-              </div> */}
-              
-              
-          </div>
-      </div>
+                <div className='text_and_button_component'>
+                    <h1 className='movie-title'>{content.original_title}</h1>
+                    <p className='movie-description'>{content.overview}</p>
+                    <p className='rating'>imdb rating {content.vote_average}</p>
+                    <p className='release_date'>{content.release_date}</p>
+                    <button className='watch_now'>Know more</button>
+                    <button className='add_to_list'>+ Add To List</button>
+                </div>
+              </div>
+        </div>
+        ))}
+
+        </div>
     </div>
   )
 }
