@@ -6,45 +6,47 @@
     background-color: black;
     color: white;
     height: 350px;
-
     overflow: hidden;
     position: relative;
     /* display: flex; */
 
     /* flex-wrap: wrap; */
     width: 100%;
+    /* justify-content: space-between; */
 }
 
 .poster-carousel{
     display: flex;
+    justify-content: space-between;
+    /* gap: 100px; */
     overflow-x:auto;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
-    padding: 10px;
-    margin: 0 -10px;
+    /* padding: 10px; */
+    /* margin: -20px -10px; */
 }
-
+/* 
 .poster-item{
-    flex: 0 0 auto;
     margin-right: 10px;
     scroll-snap-align: start;
     width: 300px;
-}
+} */
 
 .background_img{
     width: 1278px;
     height: 870px;
-    opacity: 0.2;
+    opacity: 0.4;
     filter: brightness(2);
     filter: saturate(2);
     /* z-index: -100; */
 }
 
 .image_and_text{
-    margin: 0.3vw;
-    padding: 0 20px;
+    /* margin: 0.3vw; */
+    padding: 0 10px;
     display: flex;
+    justify-content: space-between;
+    gap: 10px;
     overflow: hidden;
     /* gap: 10px; */
     /* z-index: 100px; */
@@ -56,15 +58,17 @@
 
 .frontend_img{
     /* width: 380px; */
-    width: 800px;
+    width: 50vw;
     overflow: hidden;
     border-radius: 10px;
     object-fit: cover;
+    margin-left: 20px;
+    /* flex-shrink: initial; */
 }
 
 .front_img{
-    padding-top: 5px;
-    width: 250px;
+    padding-top: 10px;
+    width: 200px;
     height: 330px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -74,8 +78,8 @@
 /* text and button component start heres */
 
 .text_and_button_component{
-    line-height: 25px;
-    padding-left: 20px;
+    /* line-height: 25px; */
+    /* padding-left: 20px; */
     color:white;
     opacity: 0.8;
 }
@@ -83,12 +87,12 @@
 .rating{
     font-size: 12px;
     color: crimson;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 
 .release_date{
     font-size: 15px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     /* color: orange; */
 }
 
@@ -96,6 +100,7 @@
     font-size: 13px;
     opacity: 0.5;
     margin-top:30px;
+    width: 10vw;
 }
 .watch_now{
     padding: 5px 10px;
@@ -104,7 +109,7 @@
     border-style: none;
     color: white;
     font-size: 12px;
-    margin: 10px 20px 0 0;
+    margin: 10px 10px 0 0;
     transition:  all 200ms ease;
 }
 
