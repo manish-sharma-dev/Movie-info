@@ -34,10 +34,11 @@
     flex-wrap:wrap;
     gap: 2vw;
     margin: 5vw 6vw ;
+
 }
 
 .card{
-    background-color: bisque;
+    background-color:#1E1E1E;
     width: 220px;
     color: white;
     border-radius: 3px;

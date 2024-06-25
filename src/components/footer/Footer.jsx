@@ -20,9 +20,10 @@ export default function Footer() {
       </div>
 
       <div className="newsletter">
-        <p className='newsletter_para'>Subscribe to Our Newsletter to be updated...</p>
+        <button className='newletter-button'>Check On Github</button>
+        {/* <p className='newsletter_para'>Subscribe to Our Newsletter to be updated...</p>
         <input className='email_option' type='email' required placeholder='enter your email'/><br />
-        <button className='Subscribe_to_newsletter' >Suscribe to newsletter</button>
+        <button className='Subscribe_to_newsletter' >Suscribe to newsletter</button> */}
       </div>
     </div>
   )

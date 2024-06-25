@@ -26,17 +26,15 @@
 
 /* newletter parts start here  */
 
-.newsletter_para{
+/* .newsletter_para{
     font-size: 17px;
     opacity: 0.8;
 }
 
 .email_option{
     padding: 5px 10px;
-    /* width: 18vw; */
     width: 22vw;
     border-radius: 5px;
-    /* margin-left: 2vw; */
 }
 
 .email_option:focus{
@@ -49,7 +47,6 @@
     padding: 8px 10px;
     margin: 1vw 7vw;
     border-radius: 8px;
-    /* border-style: none; */
     font-size: 13px;
 }
 
@@ -58,4 +55,22 @@
     border-color: white;
 }
 
+ */
 
+ .newletter-button{
+    padding: 50px 30px;
+    margin: 5px;
+    font-size: 1.2rem;
+    font-family:'Times New Roman', Times, serif;
+    box-shadow: 1px 1px  crimson;
+    background-color:#1E1E1E;
+    color: #fff;
+    text-wrap: wrap;
+ }
+
+ .newletter-button:hover{
+    background-color:#fff;
+    box-shadow: 2px 2px crimson;
+    color: #000;
+
+ }
