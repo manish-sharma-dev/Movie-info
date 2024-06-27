@@ -41,6 +41,7 @@ export default function Navbar({ onSearch }) {
         const data = await response.json();
         console.log('input search daata is fetched here')
         console.log(data)
+        onSearch(data.results)
 
 
       } catch (error) {

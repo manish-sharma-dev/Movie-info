@@ -10,7 +10,10 @@ import Movieinfo from '../movieInfo/Movieinfo'
 export default function Home() {
     const [showSearchResult, setShowSearchResult] = useState(false)
 
-    const handleSearch = () => {
+    const [searchData, setsearchData] = useState(null);
+
+    const handleSearch = (data) => {
+        setsearchData(data)
         setShowSearchResult(true);
     };
 
@@ -19,7 +22,7 @@ export default function Home() {
         <div className='main_all'>
             <Navbar onSearch={handleSearch} />
             {showSearchResult ?
-            (<Movieinfo />
+            (<Movieinfo searchData = {searchData} />
 
             ) : (
             <>

@@ -15,7 +15,7 @@ function App() {
   return (
     <Router>
       <Routes>
-          <Route path='/movie' element={<Home />} />
+          <Route path='/' element={<Home />} />
       </Routes>
     </Router> 
     // <Home />

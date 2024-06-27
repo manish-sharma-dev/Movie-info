@@ -46,7 +46,7 @@
     padding: 0 10px;
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    gap: 3vw;
     overflow: hidden;
     /* gap: 10px; */
     /* z-index: 100px; */
@@ -56,15 +56,13 @@
     
 }
 
-.frontend_img{
-    /* width: 380px; */
+/* .frontend_img{
     width: 50vw;
     overflow: hidden;
     border-radius: 10px;
     object-fit: cover;
     margin-left: 20px;
-    /* flex-shrink: initial; */
-}
+}  */
 
 .front_img{
     padding-top: 10px;
@@ -81,7 +79,7 @@
     /* line-height: 25px; */
     /* padding-left: 20px; */
     color:white;
-    opacity: 0.8;
+margin-right: 6vw;    
 }
 
 .rating{

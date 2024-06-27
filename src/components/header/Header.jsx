@@ -32,8 +32,8 @@ export default function Header() {
         const posterData = await response.json();
         console.log('poster data is here')
         // console.log(posterData.results)
-        setPoster(posterData.results[2])
-        // setPoster(posterData.results)
+        // setPoster(posterData.results[2])
+        setPoster(posterData.results)
 
       }
       catch (error) {
@@ -52,68 +52,68 @@ export default function Header() {
     return () => clearInterval(interval);
   },[poster])
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentIndex(prevIndex => (prevIndex + 1) % poster.length);
-  //   },10000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex(prevIndex => (prevIndex + 1) % poster.length);
+    },10000);
 
-  //   return () => clearInterval(interval);
-  // }, [poster]);
+    return () => clearInterval(interval);
+  }, [poster]);
 
-  // if (poster.length === 0) {
-  //   return <div>Loading...</div>;
-  // }
+  if (poster.length === 0) {
+    return <div>Loading...</div>;
+  }
 
-  // const currentPoster = poster[currentIndex];
+  const currentPoster = poster[currentIndex];
 
 
   return (
-    // <div className='header'>
-    //   <div className='poster-carousel'>
-
-    //        <div className='poster-item'>
-    //            <img src={`https://image.tmdb.org/t/p/w500${currentPoster.backdrop_path}`} alt='img1' className='background_img' />
-    //              <div className='image_and_text'>
-    //                 <div className='frontend_img'>
-    //                   <img src={`https://image.tmdb.org/t/p/w200${currentPoster.poster_path}`} alt='img2' className='front_img' />
-    //                 </div>
-
-    //                 <div className='text_and_button_component'>
-    //                     <h1 className='movie-title'>{currentPoster.original_title}</h1>
-    //                     <p className='movie-description'>{currentPoster.overview}</p>
-    //                     <p className='rating'>imdb rating {currentPoster.vote_average}</p>
-    //                     <p className='release_date'>{currentPoster.release_date}</p>
-    //                     <button className='watch_now'>Know more</button>
-    //                     <button className='add_to_list'>+ Add To List</button>
-    //                 </div>
-    //              </div>
-    //        </div>
-
-    //     </div>
-    // </div>
-
     <div className='header'>
       <div className='poster-carousel'>
 
-           {/* <div className='poster-item'> */}
-               <img src={`https://image.tmdb.org/t/p/w500${poster.backdrop_path}`} alt='img1' className='background_img' />
+           <div className='poster-item'>
+               <img src={`https://image.tmdb.org/t/p/w500${currentPoster.backdrop_path}`} alt='img1' className='background_img' />
                  <div className='image_and_text'>
                     <div className='frontend_img'>
-                      <img src={`https://image.tmdb.org/t/p/w200${poster.poster_path}`} alt='img2' className='front_img' />
+                      <img src={`https://image.tmdb.org/t/p/w200${currentPoster.poster_path}`} alt='img2' className='front_img' />
                     </div>
 
                     <div className='text_and_button_component'>
-                        <h1 className='movie-title'>{poster.original_title}</h1>
-                        <p className='movie-description'>{poster.overview}</p>
-                        <p className='rating'>Average Vote :  {parseInt(poster.vote_average)}</p>
-                        <p className='release_date'>{poster.release_date}</p>
+                        <h1 className='movie-title'>{currentPoster.original_title}</h1>
+                        <p className='movie-description'>{currentPoster.overview}</p>
+                        <p className='rating'>imdb rating {currentPoster.vote_average}</p>
+                        <p className='release_date'>{currentPoster.release_date}</p>
                         <button className='watch_now'>Know more</button>
                         <button className='add_to_list'>+ Add To List</button>
                     </div>
                  </div>
-           {/* </div> */}
+           </div>
 
         </div>
     </div>
+
+    // <div className='header'>
+    //   <div className='poster-carousel'>
+
+    //        {/* <div className='poster-item'> */}
+    //            <img src={`https://image.tmdb.org/t/p/w500${poster.backdrop_path}`} alt='img1' className='background_img' />
+    //              <div className='image_and_text'>
+    //                 <div className='frontend_img'>
+    //                   <img src={`https://image.tmdb.org/t/p/w200${poster.poster_path}`} alt='img2' className='front_img' />
+    //                 </div>
+
+    //                 <div className='text_and_button_component'>
+    //                     <h1 className='movie-title'>{poster.original_title}</h1>
+    //                     <p className='movie-description'>{poster.overview}</p>
+    //                     <p className='rating'>Average Vote :  {parseInt(poster.vote_average)}</p>
+    //                     <p className='release_date'>{poster.release_date}</p>
+    //                     <button className='watch_now'>Know more</button>
+    //                     <button className='add_to_list'>+ Add To List</button>
+    //                 </div>
+    //              </div>
+    //        {/* </div> */}
+
+    //     </div>
+    // </div>
   )
 }
