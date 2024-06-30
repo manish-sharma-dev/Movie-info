@@ -27,6 +27,14 @@
     font-weight: 700;
 }
 
+.move-left{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0 6px 0;
+    gap: 57vw;
+}
+
 .search{
     display: flex;
     justify-content: space-between;
@@ -65,4 +73,15 @@
     transition: all 500ms ease;
     opacity: 0.6;
 } 
+
+.naviagtion-btn{
+    background-color: #2e2e2e;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.naviagtion-btn:hover{
+    opacity: 0.8;
+}
 

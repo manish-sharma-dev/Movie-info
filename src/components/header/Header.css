@@ -123,13 +123,9 @@ margin-right: 6vw;
     font-size: 12px;
     border-radius: 5px;
     border-style: none;
-    margin-top: 50px;
-}
-
-.add_to_list:hover{
-    background-color:dimgray;
+    margin-top: 30px;
+    background-color:crimson;
     color: white;
-    padding: 6px 11px;
 }
 
 /* .swipe{

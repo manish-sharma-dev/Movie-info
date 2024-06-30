@@ -20,7 +20,7 @@ export default function Header() {
         }
       };
 
-      const url = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
+      const url = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=2';
 
       try {
         const response = await fetch(url, options);
@@ -66,6 +66,16 @@ export default function Header() {
 
   const currentPoster = poster[currentIndex];
 
+  // mfor stoping the sixw of the movie overview 
+
+  function showSomeOverview(text,maxLength){
+    if (maxLength >= text.length) {
+      return text
+    }
+
+    return text.substring(0,maxLength)+'.....'
+  }
+
 
   return (
     <div className='header'>
@@ -79,16 +89,14 @@ export default function Header() {
                     </div>
 
                     <div className='text_and_button_component'>
-                        <h1 className='movie-title'>{currentPoster.original_title}</h1>
-                        <p className='movie-description'>{currentPoster.overview}</p>
-                        <p className='rating'>imdb rating {currentPoster.vote_average}</p>
-                        <p className='release_date'>{currentPoster.release_date}</p>
-                        <button className='watch_now'>Know more</button>
-                        <button className='add_to_list'>+ Add To List</button>
+                        <h1 className='movie-title'><span style={{color: 'darkorange'}}>Title: </span>{currentPoster.original_title}</h1>
+                        <p className='movie-description'><p style={{color: 'crimson'}}>Overview: </p>{showSomeOverview(currentPoster.overview,150)}</p>
+                        <p className='rating'>Rating : {parseInt(currentPoster.vote_average)}</p>
+                        <p className='release_date'>Released Date :  {currentPoster.release_date}</p>
+                        <button className='add_to_list'>Why Don't you give it a try...</button>
                     </div>
                  </div>
            </div>
-
         </div>
     </div>
 

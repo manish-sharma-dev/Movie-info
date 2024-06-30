@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import { Search } from 'react-feather'
+  import React, { useEffect, useState } from 'react'
+import { ArrowLeft, Search } from 'react-feather'
 import '../navbar/Navbar.css'
-// import { ToggleLeft } from 'react-feather'
+import { useNavigate } from 'react-router-dom'
+// import { Navigation } from 'react-feather'
+
 
 export default function Navbar({ onSearch }) {
   const categoryOptions = ['Action', 'Comedy', 'Drama', 'Suspense', 'Scifi']
   const [option, setoption] = useState(0);
   const [query, setQuery] = useState('');
+
+  const navigate = useNavigate();
 
   // this useEffect is for changing the text Dynamically 
   useEffect(()=>{
@@ -63,18 +67,23 @@ export default function Navbar({ onSearch }) {
           <span className='name_1_part'>Movie<span className='name_2_part'>-Lib</span></span>
           
             <p className='nav_para'> Find the best movies in any category <span className='options'>{categoryOptions[option]}... </span></p>
-            <form onSubmit={handleSubmit}>
-                  <div className='search'>
-                      <input
-                      type='text'
-                      className='search_box'  
-                      placeholder='looking for...'
-                      value={query}
-                      onChange={(e) => setQuery(e.target.value)}
-                      />
-                      <button type='submit' className='search_btn' onClick={fetchSearchMovie}><Search size={14}></Search></button>
-                  </div>
-            </form>
+
+            <div className='move-left'>
+              <ArrowLeft size={18} onClick={() => {navigate(0)}} style={{ backgroundColor : '#2e2e2e', color:'white', padding :'7px', borderRadius : '10px'}}/>
+           
+              <form onSubmit={handleSubmit}>
+                    <div className='search'>
+                        <input
+                        type='text'
+                        className='search_box'  
+                        placeholder='looking for...'
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                        />
+                        <button type='submit' className='search_btn' onClick={fetchSearchMovie}><Search size={14}></Search></button>
+                    </div>
+              </form>
+            </div>
         </div>
     </>
   )

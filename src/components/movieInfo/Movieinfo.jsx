@@ -22,7 +22,7 @@ export default function Movieinfo({ searchData }) {
   return (
     <div className='info'>
       {/* <Link to='/home'>movebcak</Link> */}
-      <ArrowLeft size={18} onClick={() => {navigate(0)}}>Return</ArrowLeft>
+      {/* <ArrowLeft size={18} onClick={() => {navigate(0)}}>Return</ArrowLeft> */}
         {searchData.map((movie,ind) => (
           <div className="info-main-container"key={ind}>
             <img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}  alt='back' className='back-images'/>

@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import '../main/Main.css'
-// import img1 from '../../assest/img-1.jpg'
+import { ArrowLeft, ArrowRight } from 'react-feather'
+
 
 
 
@@ -57,6 +58,10 @@ export default function Main() {
       setpage(prev => prev+1)
     }
 
+    function loadprevious(){
+      setpage(prev => prev-1)
+    }
+
   // for shorter description -----------------------------
   
   function showSomeOverview(text,maxLength){
@@ -89,6 +94,18 @@ export default function Main() {
           <li className='category_list' onClick={() => setMainQuery('53')}>Thriller</li>
         </ul>
       </div>
+
+      <div className='loadmore_container'>
+        <div style={{ display: 'flex', alignItems:'center',justifyContent: 'center', backgroundColor : 'darkorange', color:'white', padding: '5px 10px', borderRadius : '5px'}}>
+          <ArrowLeft size={15}   onClick={loadprevious}>prev</ArrowLeft>
+          <span style={{ fontSize : '14px', cursor: 'pointer'}}  onClick={loadprevious}>prev</span>
+        </div>
+
+        <div style={{ display: 'flex', alignItems:'center' ,justifyContent: 'center', backgroundColor : 'darkorange', color:'white', padding: '5px 10px', borderRadius : '5px'}}>
+          <span  style={{ fontSize : '14px' , cursor: 'pointer'}} onClick={loadmoremovies}>next</span>
+          <ArrowRight size={15}  onClick={loadmoremovies}/>
+        </div>
+      </div>
       
       {/* 10749 */}
 
@@ -103,17 +120,15 @@ export default function Main() {
                   <p className='card_movie_description'>{showSomeOverview(movie.overview,70)}</p>
 
                   <div className='rating_watch_movie'>
-                    <button className='watch_movie'>Discover it..</button>
-                    <span className='card_movie_rating'>{movies.release_date}</span>
+                    <p className='watch_movie'>{parseInt(movie.vote_average)}+ rating..</p>
+                    <span className='card_movie_rating'>{movie.release_date}</span>
                   </div>
                 </div>
               </div>              
             ))}
         </div> 
 
-        <div className='loadmore_container'>
-          <button className='loadmore' onClick={loadmoremovies}>Load more..</button>
-        </div>
+        
     </div>
   );  
 }
