@@ -16,7 +16,7 @@ export default function Header() {
         method: 'GET',
         headers: {
           accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYzAwOGExZWY0N2Y4ZjI3MDdhN2U2NjAwZmNiY2Q3MSIsIm5iZiI6MTcxOTA1MzEyNi41MzU1ODIsInN1YiI6IjY2NzE0OTM5Nzc4M2ExNmQ5MmYyZjcyYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7pzLOsCUYdY1hJ5z3q1aJ8eK-myVkD65A_RCbbPwAgg'
+          Authorization: process.env.REACT_API_KEY,
         }
       };
 
@@ -61,7 +61,7 @@ export default function Header() {
   }, [poster]);
 
   if (poster.length === 0) {
-    return <div>Loading...</div>;
+    return <div style={{ fontSize : '50px', display :'flex', justifyContent: 'center', alignItems : 'center', fontWeight : '600' ,color : 'firebrick'}}>Loading...</div>;
   }
 
   const currentPoster = poster[currentIndex];
